@@ -1,5 +1,5 @@
 import React from 'react';
-import Bannerimage from "../assests/BannerImage.jpg"
+import Bannerimage from "../assests/Banner_Image.jpg"
 
 const Banner = () => {
   return (
@@ -15,7 +15,7 @@ const Banner = () => {
     >
       <div className="relative z-10 flex flex-col justify-center items-center h-full text-center">
         <main className="px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl tracking-tight font-extrabold text-gray-300 sm:text-5xl md:text-6xl">
             <span className="block">Your Digital Showcase for Web</span>{' '}
             <span className="block text-indigo-600">Solutions</span>
           </h1>

@@ -36,13 +36,13 @@ const Expertise = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-indigo-300 to-indigo-700 py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+    <section className="bg-custom_blue py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+          <h2 className="text-3xl font-extrabold text-black sm:text-4xl">
             Why Choose Us s?
           </h2>
-          <p className="mt-4 text-xl text-indigo-200 max-w-3xl mx-auto">
+          <p className="mt-4 text-xl text-black max-w-3xl mx-auto">
             We specialize in creating powerful online presences for real estate businesses, helping them engage more clients through effective web solutions.
           </p>
         </div>
@@ -51,14 +51,6 @@ const Expertise = () => {
             <ExpertiseCard key={index} {...area} />
           ))}
         </div>
-        {/* <div className="mt-12 text-center">
-          <a
-            href="#"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 transition-colors duration-300"
-          >
-            Learn More About Our Expertise
-          </a>
-        </div> */}
       </div>
     </section>
   );

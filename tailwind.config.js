@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      colors: {
+        custom_blue: '#CADCFC',
+      },
       gradientColorStops: theme => ({
         'indigo-700': theme('colors.indigo.700'),
         'indigo-900': theme('colors.indigo.900'),
