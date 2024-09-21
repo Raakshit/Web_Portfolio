@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     message: ''
   });
   const [showAlert, setShowAlert] = useState(false);
@@ -20,42 +18,37 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a server
     console.log('Form submitted:', formData);
     setShowAlert(true);
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setFormData({ name: '', email: '', message: '' });
+    setTimeout(() => setShowAlert(false), 5000);
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-gradient-to-br from-amber-50 to-white min-h-screen py-2 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            Contact Us
+          <h2 className="text-4xl font-extrabold text-amber-800 sm:text-5xl mb-2">
+            Let's Connect
           </h2>
-          <p className="mt-4 text-xl text-gray-500">
-            We'd love to hear from you. Drop us a line and we'll get back to you as soon as possible.
+          <p className="text-xl text-amber-700">
+            We're here to turn your ideas into reality
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="px-4 py-5 sm:p-6">
+        <div className="bg-white shadow-2xl rounded-3xl overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="p-8 lg:p-12">
+              <h3 className="text-2xl font-semibold text-amber-800 mb-6">Send us a message</h3>
               {showAlert && (
-                <div className="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-                  <strong className="font-bold">Success!</strong>
-                  <span className="block sm:inline"> Your message has been sent successfully!</span>
-                  <span className="absolute top-0 bottom-0 right-0 px-4 py-3">
-                    <svg className="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" onClick={() => setShowAlert(false)}>
-                      <title>Close</title>
-                      <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/>
-                    </svg>
-                  </span>
+                <div className="mb-6 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-r" role="alert">
+                  <p className="font-bold">Success!</p>
+                  <p>Your message has been sent. We'll get back to you soon.</p>
                 </div>
               )}
-              <form onSubmit={handleSubmit}>
-                <div className="mb-4">
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-amber-700">Name</label>
                   <input
                     type="text"
                     name="name"
@@ -63,11 +56,11 @@ const ContactUs = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="mt-1 block w-full rounded-md border-amber-300 shadow-sm focus:border-amber-500 focus:ring-amber-500"
                   />
                 </div>
-                <div className="mb-4">
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-amber-700">Email</label>
                   <input
                     type="email"
                     name="email"
@@ -75,22 +68,11 @@ const ContactUs = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="mt-1 block w-full rounded-md border-amber-300 shadow-sm focus:border-amber-500 focus:ring-amber-500"
                   />
                 </div>
-                <div className="mb-4">
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone (optional)</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-amber-700">Message</label>
                   <textarea
                     name="message"
                     id="message"
@@ -98,47 +80,54 @@ const ContactUs = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                    className="mt-1 block w-full rounded-md border-amber-300 shadow-sm focus:border-amber-500 focus:ring-amber-500"
                   ></textarea>
                 </div>
                 <div>
                   <button
                     type="submit"
-                    className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-colors duration-200"
                   >
                     Send Message
                   </button>
                 </div>
               </form>
             </div>
-          </div>
-          
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="px-4 py-5 sm:p-6">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">Our Contact Information</h3>
-              <div className="space-y-6">
-                <div className="flex items-center">
-                  <EnvelopeIcon className="h-6 w-6 text-indigo-600 mr-3" />
-                  <span>contact@realestatewebsolutions.com</span>
-                </div>
-                <div className="flex items-center">
-                  <PhoneIcon className="h-6 w-6 text-indigo-600 mr-3" />
-                  <span>+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-center">
-                  <MapPinIcon className="h-6 w-6 text-indigo-600 mr-3" />
-                  <span>123 Web Dev Street, Internet City, 12345</span>
-                </div>
+            <div className="bg-amber-400 p-8 lg:p-12 flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-semibold text-amber-900 mb-6">Contact Information</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-center text-amber-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    contact@example.com
+                  </li>
+                  <li className="flex items-center text-amber-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    +1 (555) 123-4567
+                  </li>
+                  <li className="flex items-center text-amber-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    123 Business Ave, Suite 100, City, State 12345
+                  </li>
+                </ul>
               </div>
               <div className="mt-8">
-                <h4 className="text-md font-medium text-gray-900 mb-2">Office Hours</h4>
-                <p className="text-sm text-gray-600">Monday - Friday: 9am - 5pm</p>
-                <p className="text-sm text-gray-600">Saturday: 10am - 2pm</p>
-                <p className="text-sm text-gray-600">Sunday: Closed</p>
+                <h4 className="text-xl font-semibold text-amber-900 mb-4">Office Hours</h4>
+                <p className="text-amber-800">Monday - Friday: 9am - 5pm</p>
+                <p className="text-amber-800">Saturday: 10am - 2pm</p>
+                <p className="text-amber-800">Sunday: Closed</p>
               </div>
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   );

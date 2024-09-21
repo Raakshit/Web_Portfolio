@@ -35,9 +35,6 @@ const HomePage = () => {
       <section id="about">
         <About />
       </section>
-      <section id="impact">
-        <OurImpact />
-      </section>
     </div>
   );
 };
@@ -48,6 +45,9 @@ const App = () => {
 
   const scrollToSection = (section) => {
     const sectionToScroll = document.getElementById(section);
+    if (sectionToScroll == 'banner'){
+      
+    }
     if (sectionToScroll) {
       sectionToScroll.scrollIntoView({ behavior: 'smooth' });
     }
@@ -69,13 +69,13 @@ const App = () => {
 
               {/* Desktop Menu */}
               <div className="hidden sm:flex sm:space-x-6">
-                <button
-                  onClick={() => scrollToSection('banner')}
+                <Link
+                  to={'/'}
                   className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 transition"
                 >
                   <Home className="h-5 w-5" />
                   <span>Home</span>
-                </button>
+                </Link>
                 <button
                   onClick={() => scrollToSection('services')}
                   className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 transition"
