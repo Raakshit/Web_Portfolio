@@ -11,6 +11,7 @@ import Expertise from './Components/Expertise';
 import PreviousWork from './Components/PreviousWork';
 import OurImpact from './Components/OurImpact';
 import Footer from './Components/Footer';
+import ClientReviews from './Components/ClientReviews';
 
 // HomePage Component
 const HomePage = () => {
@@ -25,11 +26,14 @@ const HomePage = () => {
       <section id="expertise">
         <Expertise />
       </section>
-      <section id="about">
-        <About />
+      <section id="client-review">
+        <ClientReviews />
       </section>
       <section id="previous-work">
         <PreviousWork />
+      </section>
+      <section id="about">
+        <About />
       </section>
       <section id="impact">
         <OurImpact />
