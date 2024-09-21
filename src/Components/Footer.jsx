@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+// import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Real Estate Web Solutions</h3>
             <p className="text-gray-400 mb-4">Enhancing your online presence in the real estate market.</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+              {/* <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <FaFacebookF />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
@@ -23,7 +23,7 @@ const Footer = () => {
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <FaInstagram />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -43,11 +43,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Website Development</a></li>
+              {/* <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Website Development</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">SEO Optimization</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Content Management</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Virtual Tours</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Marketing Strategies</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Marketing Strategies</a></li> */}
             </ul>
           </div>
 
