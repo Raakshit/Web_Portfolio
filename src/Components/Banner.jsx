@@ -49,7 +49,7 @@ const Banner = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xl md:text-2xl text-gray-300 mb-10"
         >
-          Elevating property showcases with bespoke web solutions that captivate and convert.
+          Elevating business showcases with bespoke web solutions that captivate and convert.
         </motion.p>
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
