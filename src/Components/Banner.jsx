@@ -41,7 +41,7 @@ const Banner = () => {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-7xl font-extrabold text-white mb-6"
         >
-          Crafting Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-600">Real Estate</span>
+          Crafting Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-600">World</span>
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
